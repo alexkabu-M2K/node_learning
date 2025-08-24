@@ -1,24 +1,33 @@
+function executar() {
+  fs.mkdir('C:/Users/m2kmo/Documents/app', { recursive: true }, (erro) => {
+    if (erro) {
+      console.error(`Erro ao criar diretório: ${erro}`);
+      return;
+    };
 
-fs.mkdir('C:/Users/m2kmo/Documents/novapasta', { recursive: true }, (erro) => {
-    if (erro) {
-        console.log('Erro ao criar a pasta:', erro);
-        return;
-    }
-    console.log('Pasta criada com sucesso!');
-});
-//const fs = require('fs');
-fs.writeFile('C:/Users/m2kmo/Documents/novapasta/arquivo.txt', 'Conteudo do arquivo', (erro) => {
-    if (erro) {
-        console.log('Erro ao escrever o arquivo:', erro);
-        return;
-    }
-    console.log('Arquivo criado com sucesso!');
-});
+    console.log(`Diretório criado com sucesso!`);
+  });
 
-fs.readFile('C:/Users/m2kmo/Documents/novapasta/arquivo.txt', 'utf-8', (erro, data) => {
+  fs.writeFile('C:/Users/m2kmo/Documents/app/arquivo.txt', 'Hello!', 'utf-8', (erro) => {
     if (erro) {
-        console.log('Erro ao ler o arquivo:', erro);
+      console.error(`Erro ao criar arquivo: ${erro}`);
+      return;
+    };
+
+    console.log(`Arquivo criado com sucesso!`);
+
+    fs.readFile('C:/Users/m2kmo/Documents/app/arquivo.txt', 'utf-8', (erro, dado) => {
+      if (erro) {
+        console.error(`Erro ao ler arquivo: ${erro}`);
         return;
-    }
-    console.log(`Conteudo do arquivo: ${data}`);
-});
+      }
+
+      console.log(`Conteúdo do arquivo: ${dado}`);
+
+    });
+  });
+
+
+}
+
+executar();

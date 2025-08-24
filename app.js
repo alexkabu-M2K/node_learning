@@ -75,7 +75,7 @@ const fs = require('fs');
 // });
 
 function executar() {
-  fs.mkdir('C:/Users/alexbessadaniel/Documents/app', { recursive: true }, (erro) => {
+  fs.mkdir('C:/Users/m2kmo/Documents/app', { recursive: true }, (erro) => {
     if (erro) {
       console.error(`Erro ao criar diretório: ${erro}`);
       return;
@@ -84,7 +84,7 @@ function executar() {
     console.log(`Diretório criado com sucesso!`);
   });
 
-  fs.writeFile('C:/Users/alexbessadaniel/Documents/app/arquivo.txt', 'Hello!', 'utf-8', (erro) => {
+  fs.writeFile('C:/Users/m2kmo/Documents/app/arquivo.txt', 'Hello!', 'utf-8', (erro) => {
     if (erro) {
       console.error(`Erro ao criar arquivo: ${erro}`);
       return;
@@ -92,7 +92,7 @@ function executar() {
 
     console.log(`Arquivo criado com sucesso!`);
 
-    fs.readFile('C:/Users/alexbessadaniel/Documents/app/arquivo.txt', 'utf-8', (erro, dado) => {
+    fs.readFile('C:/Users/m2kmo/Documents/app/arquivo.txt', 'utf-8', (erro, dado) => {
       if (erro) {
         console.error(`Erro ao ler arquivo: ${erro}`);
         return;
